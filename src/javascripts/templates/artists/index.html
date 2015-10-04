@@ -1,0 +1,22 @@
+<h1>Artists Index Page</h1>
+
+<table class="table table-hover">
+  <thead>
+    <th>Artist ID</th>
+    <th>Name</th>
+    <!-- <th>URL</th> -->
+    <!-- <th>Picture URL</th> -->
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="artist in artists">
+      <td>{{ artist.artistID }}</td>
+      <td>{{ artist.name }}</td>
+      <!-- <td>{{ artist.url }}</td> -->
+      <!-- <td>{{ artist.picture_url }}</td> -->
+      <td><button class="btn btn-default" ng-click="startListening(artist)">Listen</button></td>
+      <td><button class="btn btn-primary" ng-click="viewArtist(artist)">View</button></td>
+    </tr>
+  </tbody>
+</table>

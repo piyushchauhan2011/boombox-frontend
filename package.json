@@ -1,0 +1,36 @@
+{
+  "name": "boombox-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.4.6",
+    "angular-animate": "^1.4.6",
+    "angular-aria": "^1.4.6",
+    "angular-strap": "^2.3.3",
+    "angular-ui-router": "^0.2.15",
+    "bootstrap-sass": "^3.3.5",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-htmlmin": "^1.1.4",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-ruby-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1",
+    "proxy-middleware": "^0.14.0"
+  },
+  "author": "Piyush Chauhan <piyushchauhan2011@gmail.com> (piyushchauhan.com)",
+  "license": "MIT"
+}
