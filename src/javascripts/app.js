@@ -17,6 +17,11 @@ var app = angular.module('app', ['templates', 'ngAnimate', 'ngAria', 'ngCookies'
 var Config = require('./config');
 app.config(Config);
 
+// All the Filters
+var Unique = require('./filters/uniqueFilter');
+
+app.filter('unique', Unique);
+
 // All the Services
 
 // All the Directives

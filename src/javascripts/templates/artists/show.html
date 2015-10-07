@@ -17,7 +17,7 @@
     <button class="btn btn-lg btn-primary" ng-click="assignTag()">Assign Tag</button>
   </div>
   <div class="col-md-8 well">
-    <div class="col-md-2" ng-repeat="tag in artist.artist_tags">
+    <div class="col-md-2" ng-repeat="tag in artist.artist_tags | unique:'tagID'">
       <span class="label label-default">{{ tag.tag_value }}</span>
     </div>
   </div>

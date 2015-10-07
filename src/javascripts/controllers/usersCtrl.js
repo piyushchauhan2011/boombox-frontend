@@ -14,7 +14,7 @@ function UsersCtrl(
     });
 
   $scope.viewUser = function(user) {
-    $state.go('users.show', { userUUID: user._id.$oid });
+    $state.go('users.show', { userUUID: user.id });
   }
 
   $scope.addFriend = function(user) {
