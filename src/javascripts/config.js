@@ -22,14 +22,24 @@ function Config(
       controller: 'ArtistsCtrl'
     })
     .state('artists.show', {
-      url: '/:artistId',
+      url: '/:artistUUID',
       templateUrl: 'artists/show.html',
       controller: 'ArtistCtrl'
     })
     .state('users', {
       url: '/users',
+      abstract: true,
+      template: '<ui-view></ui-view>'
+    })
+    .state('users.index', {
+      url: '',
       templateUrl: 'users/index.html',
       controller: 'UsersCtrl'
+    })
+    .state('users.show', {
+      url: '/:userUUID',
+      templateUrl: 'users/show.html',
+      controller: 'UserCtrl'
     });
 
   // $locationProvider.html5Mode(true);

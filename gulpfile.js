@@ -25,7 +25,7 @@ gulp.task('connect', function() {
         (function() {
           var url = require('url');
           var proxy = require('proxy-middleware');
-          var options = url.parse('http://localhost:3000/');
+          var options = url.parse('http://localhost:4567/');
           options.route = '/api';
           return proxy(options);
         })()

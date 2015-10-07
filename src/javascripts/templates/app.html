@@ -1,1 +1,13 @@
-{{ message }}
+<form ng-submit="loadUser()">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Enter your USER ID</h1>
+      <input class="form-control" type="text" ng-model="userID">
+    </div>
+  </div>
+  <div class="row" style="margin-top: 1em;">
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-lg btn-default">Show</button>
+    </div>
+  </div>
+</form>

@@ -1,19 +1,26 @@
-<h1>Artists</h1>
+<div class="row">
+  <div class="col-md-4">
+    <h1>User ID: {{ user.userID }}</h1>
+  </div>
+  <div class="col-md-8 well">
+    <div class="col-md-2" ng-repeat="tag in user.user_tags">
+      <span class="label label-default">{{ tag.tag_value }}</span>
+    </div>
+  </div>
+</div>
+
+<h1>Artist Listening to</h1>
 
 <table class="table table-hover">
   <thead>
     <th>Artist ID</th>
-    <th>Name</th>
-    <!-- <th>URL</th> -->
-    <!-- <th>Picture URL</th> -->
+    <th></th>
     <th></th>
   </thead>
   <tbody>
-    <tr ng-repeat="artist in artists">
+    <tr ng-repeat="artist in user.artists">
       <td>{{ artist.artistID }}</td>
-      <td>{{ artist.name }}</td>
-      <!-- <td>{{ artist.url }}</td> -->
-      <!-- <td>{{ artist.picture_url }}</td> -->
+      <td><button class="btn btn-default" ng-click="startUnlistening(artist)">Unlisten</button></td>
       <td><button class="btn btn-primary" ng-click="viewArtist(artist)">View</button></td>
     </tr>
   </tbody>

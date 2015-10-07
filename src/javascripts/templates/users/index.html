@@ -1,1 +1,16 @@
-{{ message }}
+<!-- <h1>Users Index Page</h1> -->
+
+<table class="table table-hover">
+  <thead>
+    <th>User ID</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{ user.userID }}</td>
+      <td><button class="btn btn-primary" ng-click="viewUser(user)">View</button></td>
+      <td><button class="btn btn-default" ng-click="addFriend(user)">Add Friend</button></td>
+    </tr>
+  </tbody>
+</table>
