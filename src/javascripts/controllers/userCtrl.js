@@ -16,6 +16,13 @@ function UserCtrl(
     byTags: []
   };
 
+  $scope.selectedTag = "";
+  $scope.tags = [];
+  $http.get('/api/tags/index')
+    .then(function(tags) {
+      $scope.tags = tags.data;
+    });
+
   $http.get('/api/users/' + $stateParams.userUUID + '/top_5_by_sum')
     .then(function(artists) {
       $scope.recommendations.bySum = artists.data;
@@ -36,10 +43,13 @@ function UserCtrl(
           });
       });
     });
-  $http.get('/api/users/' + $stateParams.userUUID + '/top_5_by_tags/' + 23)
-    .then(function(artists) {
-      $scope.recommendations.byTags = artists.data;
-    });
+
+  $scope.recommendationByTag = function() {
+    $http.get('/api/users/' + $stateParams.userUUID + '/top_5_by_tags/' + $scope.selectedTag.tagID)
+      .then(function(artists) {
+        $scope.recommendations.byTags = artists.data;
+      });
+  };
 
   $scope.viewArtist = function(artist) {
     $http.get('/api/artists/byID/' + artist.artistID)
@@ -50,6 +60,10 @@ function UserCtrl(
           $state.go('artists.show', { artistUUID: artist.data.id });
         }
       });
+  };
+
+  $scope.viewFriend = function(friend) {
+    $state.go('users.show', { userUUID: friend.id });
   };
 }
 
