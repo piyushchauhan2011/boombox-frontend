@@ -9,10 +9,24 @@ function ArtistsCtrl(
       $scope.artists = artists.data;
     });
 
+  $scope.selectedTag = "";
+  $scope.tags = [];
+  $http.get('/api/tags/index')
+    .then(function(tags) {
+      $scope.tags = tags.data;
+    });
+
   $scope.recommendations = {
     bySum: [],
     byNumber: [],
     byTags: []
+  };
+
+  $scope.recommendationByTag = function() {
+    $http.get('/api/artists' + '/top_5_by_tags/' + $scope.selectedTag.tagID)
+      .then(function(artists) {
+        $scope.recommendations.byTags = artists.data;
+      });
   };
 
   $http.get('/api/artists' + '/top_5_by_sum')
@@ -34,10 +48,6 @@ function ArtistsCtrl(
       //       artist.name = response.data.name;
       //     });
       // });
-    });
-  $http.get('/api/artists' + '/top_5_by_tags/' + 23)
-    .then(function(artists) {
-      $scope.recommendations.byTags = artists.data;
     });
 
   $scope.viewArtist = function(artist) {
