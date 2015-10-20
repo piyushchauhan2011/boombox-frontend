@@ -50,6 +50,13 @@ function ArtistsCtrl(
       // });
     });
 
+  $scope.populateArtists = function(name) {
+    $http.get('/api/artists/byName/' + name)
+      .then(function(artists) {
+        $scope.artists = artists.data;
+      });
+  };
+
   $scope.viewArtist = function(artist) {
     if(artist._id) {
       $state.go('artists.show', { artistUUID: artist._id.$oid });
