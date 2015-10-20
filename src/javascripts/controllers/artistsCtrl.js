@@ -9,7 +9,7 @@ function ArtistsCtrl(
       $scope.artists = artists.data;
     });
 
-  $scope.selectedTag = "";
+  $scope.selectedTag = '';
   $scope.tags = [];
   $http.get('/api/tags/index')
     .then(function(tags) {
@@ -19,7 +19,7 @@ function ArtistsCtrl(
   $scope.recommendations = {
     bySum: [],
     byNumber: [],
-    byTags: []
+    byTags: [],
   };
 
   $scope.recommendationByTag = function() {
@@ -32,6 +32,7 @@ function ArtistsCtrl(
   $http.get('/api/artists' + '/top_5_by_sum')
     .then(function(artists) {
       $scope.recommendations.bySum = artists.data;
+
       // $scope.recommendations.bySum.forEach(function(artist) {
       //   $http.get('/api/artists/byID/' + artist.artistID)
       //     .then(function(response) {
@@ -39,9 +40,11 @@ function ArtistsCtrl(
       //     });
       // });
     });
+
   $http.get('/api/artists' + '/top_5_by_number')
     .then(function(artists) {
       $scope.recommendations.byNumber = artists.data;
+
       // $scope.recommendations.byNumber.forEach(function(artist) {
       //   $http.get('/api/artists/byID/' + artist.artistID)
       //     .then(function(response) {
@@ -58,7 +61,7 @@ function ArtistsCtrl(
   };
 
   $scope.viewArtist = function(artist) {
-    if(artist._id) {
+    if (artist._id) {
       $state.go('artists.show', { artistUUID: artist._id.$oid });
     } else {
       $state.go('artists.show', { artistUUID: artist.id });
