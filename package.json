@@ -15,7 +15,7 @@
     "angular-strap": "^2.3.3",
     "angular-ui-router": "^0.2.15",
     "bootstrap-sass": "^3.3.5",
-    "jquery": "^2.1.4",
+    "jquery": "^3.0.0",
     "lodash": "^3.10.1"
   },
   "devDependencies": {
